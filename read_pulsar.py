@@ -12,5 +12,7 @@ def read_pulsar(filename):
   x = data[:,2]
   y = data[:,3]
   E = data[:,4]
- 
+
+  type(x)
+
   return time, x, y, E
