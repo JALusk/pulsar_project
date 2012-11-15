@@ -13,14 +13,19 @@ def read_pulsar(filename):
   y = data[:,3]
   E = data[:,4]
   flag = data[:,5]
-  
+
+  t_good = []
+  x_good = []
+  y_good = []
+  E_good = []
+
   # Filter out the bad photons (flag not equal zero)
   # and create lists of good photon data
   for i in range(0, len(t)):
-    if flag[i] = 0:
+    if flag[i] == 0:
       t_good.append(t[i])
       x_good.append(x[i])
       y_good.append(y[i])
       E_good.append(E[i])
-
+  
   return t_good, x_good, y_good, E_good
