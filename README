@@ -1,0 +1,10 @@
+pulsar_project
+Copyright (C) 2012 Jeremy A. Lusk
+Contact: Jeremy.Lusk@Gmail.com
+----------
+
+I wrote this code for a grad school project in ASTR 5403: High Energy Astrophysics at the University of Oklahoma.
+
+The code is written in python, and requires the installation of the python modules scipy and pylab, which facilitate I/O and plotting
+
+The code is made available under a GNU General Public License v3.0 - see LICENSE.txt for details.
