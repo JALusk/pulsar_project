@@ -18,11 +18,11 @@ t, x, y, E = pulsar_select(x0, y0, r)
 # relative time from the first observed event
 t_rel = t - min(t)
 
-# Making bins of 1/100 second
+# Making bins of 1/1000 second
 obs_time = max(t_rel)
 Nbins = math.ceil(obs_time)*1000.
 
-# Bin the time data in 1/100 second bins
+# Bin the time data in 1/1000 second bins
 t_hist = histogram(t_rel, bins = Nbins, range=(0, math.ceil(obs_time)))
 counts = t_hist[0]
 bins = t_hist[1]
@@ -41,7 +41,7 @@ print 'Pulsar period =', pulsar_period, '(s)'
 # Plot figure
 fig = plt.figure()
 ax = fig.add_subplot(111)
-pgram = ax.plot(period[1:len(power)+1]/500.,power)
+pgram = ax.plot(period[1:len(power)+1]/1000.,power)
 ax.set_xscale('log')
 #ax.set_xlim([1.0E-2, 1.0E0])
 ax.set_title('Pulsar 3: Periodogram')
