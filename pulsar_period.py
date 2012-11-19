@@ -39,14 +39,16 @@ pulsar_period = period[argmax(power)]/1000.
 print 'Pulsar period =', pulsar_period, '(s)'
 
 # Plot figure
-#fig = plt.figure()
-#ax = fig.add_subplot(111)
-#pgram = ax.plot(period[1:len(power)+1]/500.,power)
-#ax.set_xscale('log')
+fig = plt.figure()
+ax = fig.add_subplot(111)
+pgram = ax.plot(period[1:len(power)+1]/500.,power)
+ax.set_xscale('log')
 #ax.set_xlim([1.0E-2, 1.0E0])
-#ax.set_title('Pulsar 3 Periodogram')
+ax.set_title('Pulsar 3: Periodogram')
+ax.set_xlabel('Period (s)')
+ax.set_ylabel('Count (photons)')
 #show()
-#fig.savefig('pgram')
+fig.savefig('pgram')
 
 phase1 = []
 phase2 = []
@@ -62,9 +64,11 @@ for j in range(len(t_rel)):
     phase2.append(1.0 + dec_number_of_periods)
 
 # Plot histogram of the phase
-fig = plt.figure()
-ax = fig.add_subplot(111)
-phasehist = ax.hist(phase1 + phase2, bins = 100)
-ax.set_title('Pulsar 3: Two Phase Plot')
-show()
-fig.savefig('phaseplot')
+fig2 = plt.figure()
+ax2 = fig2.add_subplot(111)
+phasehist = ax2.hist(phase1 + phase2, bins = 100)
+ax2.set_title('Pulsar 3: Two Phase Plot')
+ax2.set_xlabel('Phase')
+ax2.set_ylabel('Count (photons)')
+#show()
+fig2.savefig('phaseplot')
