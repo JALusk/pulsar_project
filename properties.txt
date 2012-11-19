@@ -1,0 +1,4 @@
+Pulsar:
+With 1ms bins,
+Pulsar period = 0.00567126602882
+
