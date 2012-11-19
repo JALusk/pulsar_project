@@ -9,13 +9,13 @@ from pulsar_select import *
 pulsar_data = 'pulsar3.lis'
 
 # read_pulsar returns time (t), x, y, and energy (E) as vectors
-#t, x, y, E = read_pulsar(pulsar_data)
+t, x, y, E = read_pulsar(pulsar_data)
 # Alternately, just plot the selected points
 #x0 = 26276.
 #y0 = 27943.
 #r = 150.0
 
-t, x, y, E = pulsar_select(x0, y0, r)
+#t, x, y, E = pulsar_select(x0, y0, r)
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
