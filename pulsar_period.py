@@ -48,16 +48,23 @@ print 'Pulsar period =', pulsar_period, '(s)'
 #show()
 #fig.savefig('pgram')
 
-phase = []
+phase1 = []
+phase2 = []
 
 # Create an array of the photon phase
+# Trying to bin it so I can plot two periods
 for j in range(len(t_rel)):
-  phase.append(modf(t_rel[j]/pulsar_period)[0])
+  int_number_of_periods = modf(t_rel[j] / pulsar_period)[1]
+  dec_number_of_periods = modf(t_rel[j] / pulsar_period)[0]
+  if int_number_of_periods % 2 == 0: # point belongs in first period
+    phase1.append(dec_number_of_periods)
+  else: # point belongs in second period
+    phase2.append(1.0 + dec_number_of_periods)
 
 # Plot histogram of the phase
 fig = plt.figure()
 ax = fig.add_subplot(111)
-phasehist = ax.hist(phase, bins = 100)
-ax.set_title('Pulsar 3 Phase Plot')
+phasehist = ax.hist(phase1 + phase2, bins = 100)
+ax.set_title('Pulsar 3: Two Phase Plot')
 show()
 fig.savefig('phaseplot')
