@@ -7,4 +7,6 @@ I wrote this code for a grad school project in ASTR 5403: High Energy Astrophysi
 
 The code is written in python, and requires the installation of the python modules scipy and pylab, which facilitate I/O and plotting
 
+It is not designed to be a general-purpose code. I wrote it to solve a specific problem. However, you may find use for it in your own work. I have endeavored to leave good comments that should help you along as you read through the code.
+
 The code is made available under a GNU General Public License v3.0 - see LICENSE.txt for details.
