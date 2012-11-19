@@ -20,7 +20,7 @@ t_rel = t - min(t)
 
 # Making bins of 1/100 second
 obs_time = max(t_rel)
-Nbins = math.ceil(obs_time)*100
+Nbins = math.ceil(obs_time)*1000.
 
 # Bin the time data in 1/100 second bins
 t_hist = histogram(t_rel, bins = Nbins, range=(0, math.ceil(obs_time)))
@@ -35,15 +35,29 @@ F = fftfreq(n)
 period = 1./F
 
 # Find the period corresponding to the max of the power
-pulsar_period = period[argmax(power)]/100.
+pulsar_period = period[argmax(power)]/1000.
 print 'Pulsar period =', pulsar_period, '(s)'
 
 # Plot figure
 fig = plt.figure()
 ax = fig.add_subplot(111)
-pgram = ax.plot(period[1:len(power)+1]/100.,power)
+pgram = ax.plot(period[1:len(power)+1]/500.,power)
 ax.set_xscale('log')
 #ax.set_xlim([1.0E-2, 1.0E0])
 ax.set_title('Pulsar 3 Periodogram')
 show()
 fig.savefig('pgram')
+
+#phase = []
+
+# Bin the photons by period
+#for j in range(len(t_rel)):
+#  phase.append(modf(t_rel[j]/pulsar_period)[0])
+
+# Plot histogram of the phase
+#fig = plt.figure()
+#ax = fig.add_subplot(111)
+#phasehist = ax.hist(phase, bins = 100)
+#ax.set_title('Pulsar 3 Phase Plot')
+#show()
+#fig.savefig('phaseplot')
