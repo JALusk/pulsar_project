@@ -1,0 +1,4 @@
+# ignore the periodogram help files #
+#####################################
+periodogram*
+*.png
